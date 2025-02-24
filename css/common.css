@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'Lato';
+	src: url('../assets/fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Fugaz One';
+	src: url('../assets/fonts/FugazOne-Regular.ttf') format('truetype');
+}
+
+.border-text {
+	text-transform: uppercase;
+
+	font-family: Lato;
+	font-size: 20px;
+	color: white;
+
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+}
+
+.player-name-text {
+	text-transform: uppercase;
+
+	font-family: Fugaz One;
+	color: white;
+	text-align: right;
+}
