@@ -1,0 +1,141 @@
+/* Card Container */
+
+#card-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+	width: 825px;
+	height: 1125px;
+
+/*	transform: scale(0.5);*/
+
+	background: black;
+}
+
+/* Border Text */
+
+#border-text {
+	position: absolute;
+	z-index:4;
+	bottom: 56px;
+
+	width: 694px;
+	height: 30px;
+}
+
+/* Border Text - Photo */
+
+#photo-credit {
+	position: absolute;
+	align-items: center;
+	left: 6px;
+	height: 30px;
+}
+
+#camera {
+	height: 16px;
+	margin-right: 4px;
+}
+
+#photographer {
+}
+
+/* Border Text - Position */
+
+#player-position {
+	position: absolute;
+	align-items: center;
+	right: 6px;
+	height: 30px;
+}
+
+#quadball {
+	height: 20px;
+}
+
+#position {
+	text-align: right;
+
+	vertical-align: 2px;
+	margin-right: 4px;
+}
+
+/* Team Logo and Name */
+#team {
+	position: absolute;
+	top: 64px;
+	z-index:3;
+
+	width: 694px;
+	height: 64px;
+
+	display: flex;
+	vertical-align: center;
+
+/*	background: rgba(0,0,255,0.8);*/
+}
+
+#team-logo {
+	margin-left: 12px;
+	margin-right: 16px;
+	height: 64px;
+}
+
+#team-name {
+	font-size: 40px;
+	line-height: 60px;
+	text-shadow: 7px 7px 6px #000;
+}
+
+/* Player Number and Name */
+#player {
+	position: absolute;
+	z-index: 2;
+	right: 90px;
+	bottom: 32px;
+
+	height: 200px;
+}
+
+#top-line {
+	font-size: 54px;
+	line-height: 0px;
+	text-shadow: 7px 7px 6px #000;
+}
+
+#bottom-line {
+	font-size: 90px;
+	line-height: 124px;
+	text-shadow: 9px 9px 6px #000;
+}
+
+
+/* Card Image and Black Border */
+
+#card-image {
+	position: absolute;
+	z-index:1;
+	width: 694px;
+	height: 936px;
+
+	border-radius: 20px;
+	
+	background-image: url('https://i.imgur.com/tJueYge.jpeg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 318%;
+}
+
+#outer-card {
+
+	width: 755px;
+	height: 1055px;
+
+	border-radius: 40px;
+	border: 1px red dashed;
+
+	background: black;
+	box-shadow: inset 0 0 0 35px black;
+}
