@@ -1,0 +1,104 @@
+/* Border Text */
+
+#border .text {
+    font-size: 20px;
+
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+#border {
+    position: absolute;
+    z-index:4;
+    bottom: 56px;
+
+    width: 694px;
+    height: 30px;
+}
+
+/* Border Text - Bottom Left */
+
+#bottom-left {
+    position: absolute;
+    align-items: center;
+    left: 6px;
+    height: 30px;
+}
+
+#bottom-left img {
+    height: 16px;
+    margin-right: 4px;
+}
+
+/* Border Text - Bottom Right */
+
+#bottom-right {
+    position: absolute;
+    align-items: center;
+    right: 6px;
+    height: 30px;
+
+    text-align: right;
+}
+
+#bottom-right img {
+    height: 20px;
+}
+
+#bottom-right .border-text {
+    text-align: right;
+
+    vertical-align: 2px;
+    margin-right: 4px;
+}
+
+/* Team Logo and Name */
+#topLeft {
+    position: absolute;
+    top: 64px;
+    z-index:3;
+
+    width: 694px;
+    height: 64px;
+
+    display: flex;
+    vertical-align: center;
+
+    /*	background: rgba(0,0,255,0.8);*/
+}
+
+#team-logo {
+    margin-left: 12px;
+    margin-right: 16px;
+    height: 64px;
+}
+
+#team-name {
+    font-size: 40px;
+    line-height: 60px;
+    text-shadow: 7px 7px 6px #000;
+}
+
+/* Player Number and Name */
+#player {
+    position: absolute;
+    z-index: 2;
+    right: 90px;
+    bottom: 32px;
+
+    height: 200px;
+}
+
+#top-line {
+    font-size: 54px;
+    line-height: 0px;
+    text-shadow: 7px 7px 6px #000;
+}
+
+#bottom-line {
+    font-size: 90px;
+    line-height: 124px;
+    text-shadow: 9px 9px 6px #000;
+}
+

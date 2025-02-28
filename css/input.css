@@ -1,0 +1,43 @@
+#inputs {
+    text-transform: none;
+    color: black;
+}
+
+#card-type, #card-options, #card-buttons {
+    margin-bottom: 30px;
+}
+
+#faq {
+    font-size: 13px;
+}
+
+.ques {
+    margin-top: 4px;
+    font-weight: bold;
+    color: darkred;
+}
+
+.ans2 {
+    color: #666;
+    font-size: 11px;
+}
+
+#card-buttons h3 {
+    text-align: left;
+    font-size: 13px;
+}
+
+#input-jersey-number {
+    width: 50px;
+}
+
+#hint-image-url {
+    color: red;
+    font-size:12px;
+}
+
+#show-trim-line {
+    margin: 0;
+    margin-right: 4px;
+    padding: 0;
+}

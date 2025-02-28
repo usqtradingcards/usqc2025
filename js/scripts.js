@@ -1,19 +1,14 @@
 document.getElementById("download-btn")
-    .addEventListener("click", function() {
-        // Use html2canvas to capture the div
-        html2canvas(document.getElementById("card-container"), {
-                allowTaint: false,
-                useCORS: true,
-                logging: true
+    .addEventListener("click", makeAndDownload);
 
-            }).then(function(canvas) {
-            // Convert the canvas to a data URL (image format)
-            var imgData = canvas.toDataURL("image/png");
+document.getElementById("refresh-image")
+  .addEventListener("click", clickRefreshImage);
 
-            // Create an anchor element to trigger the download
-            var link = document.createElement('a');
-            link.href = imgData;
-            link.download = "card-image.png"; // Set the filename for the image
-            link.click(); // Trigger the download
-    });
-});
+document.getElementById("reset-btn")
+  .addEventListener("click", resetForm);
+
+document.getElementById("input-type")
+  .addEventListener("change", cardTypeChanged);
+
+document.getElementById("show-trim-line")
+  .addEventListener("change", trimLineToggled);
