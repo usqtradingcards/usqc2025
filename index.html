@@ -1,60 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>US Quadball Cup 2025 Trading Cards</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>US Quadball Cup 2025 Trading Cards</title>
 
-        <link rel="stylesheet" href="./css/styles.css">
-        <link rel="stylesheet" href="./css/common.css">
+    <!-- style sheets -->
+    <link rel="stylesheet" href="./css/styles.css">
 
-        <script src="./js/html2canvas.min.js"></script>
-    </head>
+    <!-- libraries -->
+    <script src="./js/html2canvas.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- scripts -->
+    <script src="js/data-teams.js"></script>
+    <script src="js/change-cardtype.js"></script>
+    <script src="js/change-trimline.js"></script>
+    <script src="js/click-download.js"></script>
+    <script src="js/click-refresh-image.js"></script>
+    <script src="js/click-reset-form.js"></script>
+    <script src="js/init-input.js"></script>
+  </head>
 
-    <body>
-        <div id="user-input"></div>
+  <body>
+    <!--needs data validation-->
+    <h1 class="lato">US Quadball Cup 2025</h1>
+    <h2 class="lato">Trading Card Designer</h2>
+    <h3 class="lato">Desktop recommended</h3>
+    <h3 class="lato">This designer may not work as expected on mobile</h3>
+    <div id="container">
+      <div id="inputs" class="lato">
 
-        <div id="card-container">
-
-            <!-- border text: photo credit + player position -->
-            <div id="border-text">
-                <!-- photo credit -->
-                <div id="photo-credit">
-                    <img id="camera" src="./assets/icons/camera.png">
-                    <span id="photographer" class="border-text">paul schiopu</span>
-                </div>
-                <!-- player position -->
-                <div id="player-position">
-                    <span id="position" class="border-text">keeper</span>
-                    <span id="position" class="border-text">#15</span>
-                    <img id="quadball" src="./assets/icons/quadball2.png">
-                </div>
-            </div>
-
-            <!-- team logo + name -->
-            <div id="team">
-                <img id="team-logo" src="./assets/team-logos/bayareabreakers.png">
-                <span id="team-name" class="player-name-text">bay area breakers</span>
-            </div>
-
-            <!-- player number and name -->
-            <div id="player">
-                <div id="top-line" class="player-name-text">brandon</div>
-                <div id="bottom-line" class="player-name-text">williams</div>
-            </div>
-
-            <!-- trading card image -->
-            <div id="card-image"></div>
-
-            <!-- black border -->
-            <div id="outer-card"></div>
-
+        <div id="card-type">
+          <label for="input-type">Card Type:</label>
+          <select id="input-type">
+            <option value="" selected disabled>Select an option</option>
+            <option value="player">Player Card</option>
+            <option value="rare">Rare Card</option>
+            <option value="staff">Tournament Staff Card</option>
+           </select>
         </div>
 
-        <button id="download-btn">Download as Image</button>
+        <div id="card-options"></div>
 
+        <div id="card-buttons">
+          <button id="refresh-image">Update Trading Card</button><br>
+          <button id="reset-btn">Reset</button><br>
+          <button id="download-btn">Download Trading Card</button>
+          <h3>After downloading, submit your trading card(s) here! (form tbd)</h3>
+        </div>
 
-        <script src="./js/scripts.js"></script>
-    </body>
+        <div id="faq">
+          <div class="ques">Why Dropbox or Imgur?</div>
+          <div class="ans">Your photo may not load correctly. And your downloaded trading card may appear all black.</div>
+          <div class="ans2">A more technical answer: Dropbox and Imgur typically allow cross origin resource sharing, which is required for this website.</div>
+
+          <div class="ques">Why is the black border so thick?</div>
+          <div class="ans">For printing purposes! The bleed zone ensures important text & images are not cropped. The finished card will be cut at the trim line.</div>
+          <input type="checkbox" id="show-trim-line"><label for="show-trim-line">Show Trim Line</label>
+
+          <div class="ques">Something's not working!</div>
+          <div class="ans">Please reach out to <br>tradingcards (at) usquadball (dot) org</div>
+
+        </div>
+      </div>
+
+      <div id="card-design">
+        <!--  cut line -->
+        <div id="trim-line" style="display: none;"></div>
+        <div id="card">
+
+          <!-- border text -->
+          <!-- bottom left: photo credit -->
+          <!-- bottom right -->
+          <div id="border" class="lato">
+            <div id="bottom-left"></div>
+            <div id="bottom-right"></div>
+          </div>
+          <!-- top left: logo + name -->
+          <div id="topLeft" class="fugaz-one"></div>
+          <!-- player number and name -->
+          <div id="player" class="fugaz-one right"></div>
+          <!-- trading card image -->
+          <div id="card-image"></div>
+        </div>
+      </div>
+
+      <script src="./js/scripts.js"></script>
+    </div>
+  </body>
 </html>
 
 <!-- imgur, google drive, dropbox direct link works -->

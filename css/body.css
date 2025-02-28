@@ -1,0 +1,31 @@
+#container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: auto;
+    margin-top: 32px;
+
+    width: 1125px;
+}
+
+#inputs {
+    width: 300px;
+    height: 600px;
+}
+
+#card-design {
+    width: 825px;
+    height: 1125px;
+}
+
+#trim-line {
+    position: absolute;
+    z-index:6;
+
+    margin-top: 35px;
+    margin-left: 35px;
+    width: 755px;
+    height: 1055px;
+
+    border-radius: 40px;
+    border: 2px red dashed;
+}

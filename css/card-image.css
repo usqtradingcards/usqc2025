@@ -1,0 +1,39 @@
+/* Card Container */
+
+#card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    width: 825px;
+    height: 1125px;
+
+    background: black;
+
+    transform-origin: top left;
+}
+
+/* Card Image and Black Border */
+
+#card-image {
+    position: absolute;
+    z-index:1;
+    width: 694px;
+    height: 936px;
+
+    border-radius: 20px;
+
+    background-image: url('https://i.imgur.com/tJueYge.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 318%;
+}
+
+#outer-card {
+    width: 755px;
+    height: 1055px;
+
+    background: black;
+    box-shadow: inset 0 0 0 35px black;
+}

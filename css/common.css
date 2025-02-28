@@ -1,3 +1,4 @@
+/* FONTS */
 @font-face {
 	font-family: 'Lato';
 	src: url('../assets/fonts/Lato-Regular.ttf') format('truetype');
@@ -8,22 +9,39 @@
 	src: url('../assets/fonts/FugazOne-Regular.ttf') format('truetype');
 }
 
-.border-text {
-	text-transform: uppercase;
-
-	font-family: Lato;
-	font-size: 20px;
-	color: white;
-
-	line-height: 1;
-	padding: 0;
-	margin: 0;
+.lato {
+	font-family: "Lato";
 }
 
-.player-name-text {
-	text-transform: uppercase;
+.fugaz-one {
+	font-family: "Fugaz One";
+}
 
-	font-family: Fugaz One;
-	color: white;
+/* FONT OPTIONS */
+
+.right {
 	text-align: right;
+}
+
+/* MAIN DIVS */
+
+body {
+	text-transform: uppercase;
+	color: white;
+}
+
+/* H1 H2 */
+h1, h2 {
+	color: black;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+h3 {
+	color: darkred;
+	font-size: 12px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
 }
