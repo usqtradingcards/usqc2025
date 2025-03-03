@@ -12,3 +12,7 @@ document.getElementById("input-type")
 
 document.getElementById("show-trim-line")
   .addEventListener("change", trimLineToggled);
+
+function sanitize(input) {
+  return input.replace(/[<>'"/]/g, '');  // Remove <, >, ', ", /
+}
