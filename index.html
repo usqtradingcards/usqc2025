@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="./css/styles.css">
 
     <!-- libraries -->
-    <script src="./js/html2canvas.min.js"></script>
+    <script src="js/lib/html2canvas.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- scripts -->
-    <script src="js/data-teams.js"></script>
-    <script src="js/change-cardtype.js"></script>
-    <script src="js/change-trimline.js"></script>
-    <script src="js/click-download.js"></script>
-    <script src="js/click-refresh-image.js"></script>
-    <script src="js/click-reset-form.js"></script>
+    <script src="js/data/positions.js"></script>
+    <script src="js/data/teams.js"></script>
+    <script src="js/listener/change-cardtype.js"></script>
+    <script src="js/listener/change-trimline.js"></script>
+    <script src="js/listener/click-download.js"></script>
+    <script src="js/listener/click-refresh-image.js"></script>
+    <script src="js/listener/click-reset-form.js"></script>
     <script src="js/init-input.js"></script>
   </head>
 
@@ -34,8 +35,10 @@
           <select id="input-type">
             <option value="" selected disabled>Select an option</option>
             <option value="player">Player Card</option>
-            <option value="rare">Rare Card</option>
+            <option value="team-staff">Team Staff Card</option>
+            <option value="official">Official Card</option>
             <option value="staff">Tournament Staff Card</option>
+            <option value="rare">Rare Card</option>
            </select>
         </div>
 
@@ -56,6 +59,9 @@
           <div class="ques">Why is the black border so thick?</div>
           <div class="ans">For printing purposes! The bleed zone ensures important text & images are not cropped. The finished card will be cut at the trim line.</div>
           <input type="checkbox" id="show-trim-line"><label for="show-trim-line">Show Trim Line</label>
+
+          <div class="ques">How do I get my team on the list?</div>
+          <div class="ans">Please send your team's name and logo to <br>tradingcards (at) usquadball (dot) org</div>
 
           <div class="ques">Something's not working!</div>
           <div class="ans">Please reach out to <br>tradingcards (at) usquadball (dot) org</div>
