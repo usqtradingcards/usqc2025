@@ -16,11 +16,14 @@ const Positions = {
   "official": [
     "Flag Runner",
     "Head Referee",
-    "Lead Assistant Referee",
     "Referee"
   ],
   "staff": [
+    "Gameplay",
+    "Livestream",
     "Media",
-    "Tournament Staff"
+    "Photographer",
+    "Tournament Staff",
+    "Volunteer"
   ]
 }

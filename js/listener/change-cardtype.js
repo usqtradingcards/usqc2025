@@ -1,6 +1,8 @@
 function cardTypeChanged() {
   let type = $('#input-type').val();
 
+  $('#errors').empty()
+
   if (type === "player") {
     playerType()
   } else if (type === "team-staff") {
@@ -35,12 +37,13 @@ function playerType() {
   cardOption.append($('<input>', { type: "text", id: "input-last-name", required: true }))
   cardOption.append($('<br>'))
   cardOption.append($('<label>', { for: "input-jersey-number", text: "Jersey Number: " }))
-  cardOption.append($('<input>', { type: "text", id: "input-jersey-number" }))
+  cardOption.append($('<input>', { type: "text", id: "input-jersey-number", pattern: "[0-9]{1,2}" }))
   cardOption.append($('<br>'))
   // image url & photographer
   cardOption.append($('<label>', { for: "input-image-url", text: "Image Url: " }))
   cardOption.append($('<input>', { type: "text", id: "input-image-url", required: true }))
-  cardOption.append($('<div>', { id: "hint-image-url", text: "Dropbox and Imgur urls recommended" }))
+  cardOption.append($('<div>', { class: "hint-image-url", text: "Dropbox and Imgur urls recommended" }))
+  cardOption.append($('<div>', { class: "hint-image-url", text: "Do not use: Facebook, Squarespace" }))
   cardOption.append($('<label>', { for: "input-photographer", text: "Photographer: " }))
   cardOption.append($('<input>', { type: "text", id: "input-photographer", required: true }))
   cardOption.append($('<br>'))
@@ -83,8 +86,9 @@ function fillTeam() {
   let $inputTeam = $("#input-team")
   $inputTeam.empty()
   $inputTeam.append($('<option>', { text: "Select a team", selected: true, disabled: true }))
-  $.each(Teams, function(key, item) {
-    $inputTeam.append($('<option>', { value: key, text: item.name, id: key }))
+  let keys = Object.keys(Teams).sort();
+  $.each(keys, function(index, key) {
+    $inputTeam.append($('<option>', { value: key, text: Teams[key].name, id: key }))
   })
 }
 

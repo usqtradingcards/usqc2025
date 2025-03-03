@@ -211,7 +211,7 @@ const Teams = {
     "image": "./assets/team-logos/TwinCitiesLogo.png",
     "name": "Twin Cities QC"
   },
-  "txst-quadball": {
+  "bobcat-quadball": {
     "image": "./assets/team-logos/TXSTQuadballLogo.png",
     "name": "Bobcat Quadball"
   },
@@ -231,7 +231,7 @@ const Teams = {
     "image": "./assets/team-logos/VermontUnitedLogo.png",
     "name": "Vermont United"
   },
-  "warriors": {
+  "the-warriors": {
     "image": "./assets/team-logos/WarriorsLogo.png",
     "name": "The Warriors"
   },
@@ -239,7 +239,7 @@ const Teams = {
     "image": "./assets/team-logos/WashingtonMonumentsLogo.png",
     "name": "Washington Monuments"
   },
-  "washups": {
+  "the-washups": {
     "image": "./assets/team-logos/WashupsLogo.png",
     "name": "The Washups"
   },
