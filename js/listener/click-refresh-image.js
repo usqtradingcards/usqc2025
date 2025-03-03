@@ -1,13 +1,22 @@
 function clickRefreshImage() {
-  image()
+  $('#errors').empty();
+
   topLeft()
-  mainText()
-  bottomLeft()
   bottomRight()
+  mainText()
+  image()
+  bottomLeft()
 }
 
 function image() {
-  let imageUrl = "https://i.imgur.com/tJueYge.jpeg"
+  // let imageUrl = "https://i.imgur.com/tJueYge.jpeg"
+  let imageUrl = sanitize($('#input-image-url').val())
+
+  if (imageUrl === '' || !imageUrl) {
+    $('#errors').append($('<div>', { text: "!! image url cannot be empty" }))
+    return
+  }
+
   $("#card-image").css('background-image', `url(${imageUrl})`)
 }
 
@@ -22,12 +31,22 @@ function topLeft() {
     name = "Official"
   } else if (cardType === "player" || cardType === "team-staff") {
     const selected = $('#input-team').val()
+
+    if (selected === '' || !selected) {
+      $('#errors').append($('<div>', { text: "!! team cannot be unselected" }))
+      return
+    }
+
     const details = Teams[selected]
     logoUrl = details["image"]
     name = details["name"]
-  } else if (cardType === "staff" || cardType === "rare") {
+  } else if (cardType === "staff") {
     logoUrl = "./assets/usq-logos/usqc25.png"
     name = "Tournament Staff"
+
+  } else if (cardType === "rare") {
+    logoUrl = "./assets/usq-logos/usqc25.png"
+    name = "Rare Card"
   }
 
   let topLeft = $('#topLeft');
@@ -49,9 +68,39 @@ function topLeft() {
 // For rare cards: description
 function mainText() {
   const type = $('#input-type').val()
-  if (type === "player") {
-    let topLine = $('#input-first-name').val();
-    let bottomLine = $('#input-last-name').val();
+  if (type === "rare") {
+    let title = sanitize($('#input-rare-title').val());
+    let caption = sanitize($('#input-rare-caption').val());
+
+    if (title === '' || !title) {
+      $('#errors').append($('<div>', { text: "!! rare card title cannot be empty" }))
+      return
+    }
+
+    let $player = $('#player');
+    $player.empty()
+    $player
+      .append(
+        $('<div>', {
+          id: "rare-title",
+          text: title
+        }))
+    $player
+      .append(
+        $('<div>', {
+          id: "rare-caption",
+          class: "lato",
+          text: caption
+        }))
+  } else {
+    let topLine = sanitize($('#input-first-name').val());
+    let bottomLine = sanitize($('#input-last-name').val());
+
+    if ((topLine === '' || !topLine) && (bottomLine === '' || !bottomLine)) {
+      $('#errors').append($('<div>', { text: "!! name cannot be empty" }))
+      return
+    }
+
     let $player = $('#player');
     $player.empty()
     $player
@@ -71,7 +120,13 @@ function mainText() {
 
 // Bottom Left: photographer credit
 function bottomLeft() {
-  const photog = $('#input-photographer').val()
+  const photog = sanitize($('#input-photographer').val());
+
+  if (photog === '' || !photog) {
+    $('#errors').append($('<div>', { text: "!! photographer name cannot be empty" }))
+    return
+  }
+
   let $bottom = $('#bottom-left');
   $bottom.empty()
   $bottom
@@ -99,8 +154,13 @@ function bottomRight() {
   let image = ''
 
   position = $('#input-position').val()
+  if (position === '' || !position) {
+    $('#errors').append($('<div>', { text: "!! position name cannot be unselected" }))
+    return
+  }
+
   if ($('#input-jersey-number').length) {
-    number = $('#input-jersey-number').val()
+    number = sanitize($('#input-jersey-number').val())
   }
 
   if (type === "player" || type === "team-staff") {
@@ -110,7 +170,8 @@ function bottomRight() {
   } else if (type === "staff") {
     image = "./assets/icons/trophy.png"
   } else if (type === "rare") {
-    image = "./assets/icons/star.png"
+    position = "rare"
+    image = "./assets/icons/rare.png"
   }
 
   let $bottom = $('#bottom-right');

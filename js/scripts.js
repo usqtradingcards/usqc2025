@@ -13,6 +13,15 @@ document.getElementById("input-type")
 document.getElementById("show-trim-line")
   .addEventListener("change", trimLineToggled);
 
+document.getElementById("left-right")
+  .addEventListener("change", adjustBackground);
+
+document.getElementById("top-down")
+  .addEventListener("change", adjustBackground);
+
+document.getElementById("zoom")
+  .addEventListener("change", adjustBackground);
+
 function sanitize(input) {
-  return input.replace(/[<>'"/]/g, '');  // Remove <, >, ', ", /
+  return input.replace(/[<>'"]/g, '');  // Remove <, >, ', ", /
 }

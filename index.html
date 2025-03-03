@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>US Quadball Cup 2025 Trading Cards</title>
+    <link rel="icon" href="./assets/usq-logos/usqc25.png" type="image/x-icon">
 
     <!-- style sheets -->
     <link rel="stylesheet" href="./css/styles.css">
@@ -13,6 +14,7 @@
     <!-- scripts -->
     <script src="js/data/positions.js"></script>
     <script src="js/data/teams.js"></script>
+    <script src="js/listener/change-background.js"></script>
     <script src="js/listener/change-cardtype.js"></script>
     <script src="js/listener/change-trimline.js"></script>
     <script src="js/listener/click-download.js"></script>
@@ -25,12 +27,11 @@
     <!--needs data validation-->
     <h1 class="lato">US Quadball Cup 2025</h1>
     <h2 class="lato">Trading Card Designer</h2>
-    <h3 class="lato">Desktop recommended</h3>
-    <h3 class="lato">This designer may not work as expected on mobile</h3>
+    <h3 class="lato">Desktop Chrome recommended. Untested on mobile.</h3>
     <div id="container">
       <div id="inputs" class="lato">
 
-        <div id="card-type">
+        <form id="card-type">
           <label for="input-type">Card Type:</label>
           <select id="input-type">
             <option value="" selected disabled>Select an option</option>
@@ -40,15 +41,25 @@
             <option value="staff">Tournament Staff Card</option>
             <option value="rare">Rare Card</option>
            </select>
-        </div>
+        </form>
 
         <div id="card-options"></div>
+
+        <div id="adjust-background">
+          <div>Adjust Background Image:</div>
+          <label for="left-right">Left & Right</label><input type="range" min="0" max="100" value="50" class="slider" id="left-right"><br>
+          <label for="top-down">Top & Bottom</label><input type="range" min="0" max="100" value="50" class="slider" id="top-down">
+          <label for="zoom">Zoom</label><input type="range" min="100" max="500" value="100" class="slider" id="zoom">
+        </div>
+
+        <div id="errors"></div>
 
         <div id="card-buttons">
           <button id="refresh-image">Update Trading Card</button><br>
           <button id="reset-btn">Reset</button><br>
           <button id="download-btn">Download Trading Card</button>
-          <h3>After downloading, submit your trading card(s) here! (form tbd)</h3>
+          <h3>After downloading, double-check the image.</h3>
+          <h3>Submit your trading card(s) here! (form tbd)</h3>
         </div>
 
         <div id="faq">
@@ -60,8 +71,8 @@
           <div class="ans">For printing purposes! The bleed zone ensures important text & images are not cropped. The finished card will be cut at the trim line.</div>
           <input type="checkbox" id="show-trim-line"><label for="show-trim-line">Show Trim Line</label>
 
-          <div class="ques">How do I get my team on the list?</div>
-          <div class="ans">Please send your team's name and logo to <br>tradingcards (at) usquadball (dot) org</div>
+          <div class="ques">Don't see your team?</div>
+          <div class="ans">Please send your team's name and logo (in png) to <br>tradingcards (at) usquadball (dot) org</div>
 
           <div class="ques">Something's not working!</div>
           <div class="ans">Please reach out to <br>tradingcards (at) usquadball (dot) org</div>
@@ -78,15 +89,15 @@
           <!-- bottom left: photo credit -->
           <!-- bottom right -->
           <div id="border" class="lato">
-            <div id="bottom-left"></div>
-            <div id="bottom-right"></div>
+            <div id="bottom-left"><img src="./assets/icons/camera.png"><span class="text">Paul Schiopu</span></div>
+            <div id="bottom-right"><div class="text">Keeper</div><div class="text">#15</div><img src="./assets/icons/quadball.png"></div>
           </div>
           <!-- top left: logo + name -->
-          <div id="topLeft" class="fugaz-one"></div>
+          <div id="topLeft" class="fugaz-one"><img id="team-logo" src="./assets/team-logos/BayAreaBreakersLogo.png"><span id="team-name">Bay Area Breakers</span></div>
           <!-- player number and name -->
-          <div id="player" class="fugaz-one right"></div>
+          <div id="player" class="fugaz-one right"><div id="top-line">Brandon</div><div id="bottom-line">Williams</div></div>
           <!-- trading card image -->
-          <div id="card-image"></div>
+          <div id="card-image" style="background-image: url('https://i.imgur.com/tJueYge.jpeg')"></div>
         </div>
       </div>
 

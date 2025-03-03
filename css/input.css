@@ -3,8 +3,8 @@
     color: black;
 }
 
-#card-type, #card-options, #card-buttons {
-    margin-bottom: 30px;
+#card-type, #card-options, #errors, #card-buttons {
+    margin-bottom: 20px;
 }
 
 #faq {
@@ -31,7 +31,7 @@
     width: 50px;
 }
 
-#hint-image-url {
+.hint-image-url {
     color: red;
     font-size:12px;
 }
@@ -40,4 +40,13 @@
     margin: 0;
     margin-right: 4px;
     padding: 0;
+}
+
+#errors {
+    color: red;
+}
+
+#adjust-background label {
+    display: inline-grid;
+    width: 100px;
 }
