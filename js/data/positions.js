@@ -18,11 +18,15 @@ const Positions = {
     "Head Referee",
     "Referee"
   ],
+  "media": [
+    "Commentator",
+    "Livestream",
+    "Photographer",
+    "Videographer",
+    "Media"
+  ],
   "staff": [
     "Gameplay",
-    "Livestream",
-    "Media",
-    "Photographer",
     "Tournament Staff",
     "Volunteer"
   ]

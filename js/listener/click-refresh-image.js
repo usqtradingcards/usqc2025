@@ -11,13 +11,39 @@ function clickRefreshImage() {
 function image() {
   // let imageUrl = "https://i.imgur.com/tJueYge.jpeg"
   let imageUrl = sanitize($('#input-image-url').val())
-
+  // set background image
   if (imageUrl === '' || !imageUrl) {
     $('#errors').append($('<div>', { text: "!! image url required" }))
     return
   }
-
   $("#card-image").css('background-image', `url(${imageUrl})`)
+  // determine min size percent
+  const image = new Image();
+  image.src = imageUrl;
+  image.onload = function() {
+    const width = image.width;
+    const height = image.height;
+    const aspect = width / height
+    const divWidth = 694;
+    const divHeight = 936;
+    const divAspect = divWidth / divHeight;
+
+    let $zoom = $('#zoom');
+    let minWidthZoom;
+    if (divAspect > aspect) {
+      // cover width, height overflow
+      minWidthZoom = 100
+    } else {
+      // cover height, width overflow
+      let widthScale = width / divWidth
+      let heightScale = height / divHeight
+      minWidthZoom = 100 * widthScale / heightScale;
+    }
+    $zoom.attr('min', minWidthZoom)
+    $zoom.attr('value', minWidthZoom)
+    $zoom.attr('max', minWidthZoom * 5)
+    adjustBackground();
+  }
 }
 
 // Top Left: Logo + Name
@@ -43,7 +69,9 @@ function topLeft() {
   } else if (cardType === "staff") {
     logoUrl = "./assets/usq-logos/usqc25.png"
     name = "Tournament Staff"
-
+  } else if (cardType === "media") {
+    logoUrl = "./assets/usq-logos/usquadball.png"
+    name = "Media"
   } else if (cardType === "rare") {
     logoUrl = "./assets/usq-logos/usqc25.png"
     name = "Rare Card"
@@ -154,7 +182,7 @@ function bottomRight() {
   let image = ''
 
   position = $('#input-position').val()
-  if (position === '' || !position) {
+  if (type !== "rare" && (position === '' || !position)) {
     $('#errors').append($('<div>', { text: "!! position required" }))
     return
   }
@@ -168,10 +196,16 @@ function bottomRight() {
   } else if (type === "official") {
     image = "./assets/icons/referee.png"
   } else if (type === "staff") {
-    image = "./assets/icons/trophy.png"
+    if (position === "Volunteer") {
+      image = "./assets/icons/volunteer.png"
+    } else {
+      image = "./assets/icons/trophy.png"
+    }
   } else if (type === "rare") {
     position = "rare"
     image = "./assets/icons/rare.png"
+  } else if (type === "media") {
+    image = "./assets/icons/media.png"
   }
 
   let $bottom = $('#bottom-right');
