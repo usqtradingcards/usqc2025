@@ -13,7 +13,7 @@ function image() {
   let imageUrl = sanitize($('#input-image-url').val())
 
   if (imageUrl === '' || !imageUrl) {
-    $('#errors').append($('<div>', { text: "!! image url cannot be empty" }))
+    $('#errors').append($('<div>', { text: "!! image url required" }))
     return
   }
 
@@ -33,7 +33,7 @@ function topLeft() {
     const selected = $('#input-team').val()
 
     if (selected === '' || !selected) {
-      $('#errors').append($('<div>', { text: "!! team cannot be unselected" }))
+      $('#errors').append($('<div>', { text: "!! team required" }))
       return
     }
 
@@ -73,7 +73,7 @@ function mainText() {
     let caption = sanitize($('#input-rare-caption').val());
 
     if (title === '' || !title) {
-      $('#errors').append($('<div>', { text: "!! rare card title cannot be empty" }))
+      $('#errors').append($('<div>', { text: "!! card title required" }))
       return
     }
 
@@ -97,7 +97,7 @@ function mainText() {
     let bottomLine = sanitize($('#input-last-name').val());
 
     if ((topLine === '' || !topLine) && (bottomLine === '' || !bottomLine)) {
-      $('#errors').append($('<div>', { text: "!! name cannot be empty" }))
+      $('#errors').append($('<div>', { text: "!! name required" }))
       return
     }
 
@@ -123,7 +123,7 @@ function bottomLeft() {
   const photog = sanitize($('#input-photographer').val());
 
   if (photog === '' || !photog) {
-    $('#errors').append($('<div>', { text: "!! photographer name cannot be empty" }))
+    $('#errors').append($('<div>', { text: "!! photographer required" }))
     return
   }
 
@@ -155,7 +155,7 @@ function bottomRight() {
 
   position = $('#input-position').val()
   if (position === '' || !position) {
-    $('#errors').append($('<div>', { text: "!! position name cannot be unselected" }))
+    $('#errors').append($('<div>', { text: "!! position required" }))
     return
   }
 
