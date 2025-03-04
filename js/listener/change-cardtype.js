@@ -20,32 +20,28 @@ function playerType() {
   let cardOption = $('#card-options');
   cardOption.empty()
   teamDiv()
-  positionsDiv()
+  positionsDiv("player")
   nameDiv()
   cardOption.append($('<label>', { for: "input-jersey-number", text: "Jersey Number: " }))
   cardOption.append($('<input>', { type: "text", id: "input-jersey-number", pattern: "[0-9]{1,2}" }))
   cardOption.append($('<br>'))
   photoDiv()
-
-  positionsDiv("player")
 }
 
 function teamStaffType() {
   let cardOption = $('#card-options');
   cardOption.empty()
   teamDiv()
+  positionsDiv("team-staff")
   nameDiv()
   photoDiv()
-
-  positionsDiv("team-staff")
 }
 function officialType() {
   let cardOption = $('#card-options');
   cardOption.empty()
+  positionsDiv("official")
   nameDiv()
   photoDiv()
-
-  positionsDiv("official")
 }
 
 function rareType() {
@@ -66,10 +62,9 @@ function rareType() {
 function staffType() {
   let cardOption = $('#card-options');
   cardOption.empty()
+  positionsDiv("staff")
   nameDiv()
   photoDiv()
-
-  positionsDiv("staff")
 }
 
 function teamDiv() {
