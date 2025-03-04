@@ -180,7 +180,7 @@ function bottomRight() {
   let image = ''
 
   position = $('#input-position').val()
-  if (position === '' || !position) {
+  if (type !== "rare" && (position === '' || !position)) {
     $('#errors').append($('<div>', { text: "!! position required" }))
     return
   }
