@@ -1,8 +1,7 @@
 #container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    margin: auto;
-    margin-top: 32px;
+    margin: 32px auto auto;
 
     width: 1125px;
 }
