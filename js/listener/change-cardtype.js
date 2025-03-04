@@ -13,6 +13,8 @@ function cardTypeChanged() {
     rareType()
   } else if (type === "staff") {
     staffType()
+  } else if (type === "media") {
+    mediaType()
   }
 }
 
@@ -36,6 +38,15 @@ function teamStaffType() {
   nameDiv()
   photoDiv()
 }
+
+function mediaType() {
+  let cardOption = $('#card-options');
+  cardOption.empty()
+  positionsDiv("media")
+  nameDiv()
+  photoDiv()
+}
+
 function officialType() {
   let cardOption = $('#card-options');
   cardOption.empty()

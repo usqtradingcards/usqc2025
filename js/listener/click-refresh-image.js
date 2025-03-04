@@ -69,7 +69,9 @@ function topLeft() {
   } else if (cardType === "staff") {
     logoUrl = "./assets/usq-logos/usqc25.png"
     name = "Tournament Staff"
-
+  } else if (cardType === "media") {
+    logoUrl = "./assets/usq-logos/usquadball.png"
+    name = "Media"
   } else if (cardType === "rare") {
     logoUrl = "./assets/usq-logos/usqc25.png"
     name = "Rare Card"
@@ -194,10 +196,16 @@ function bottomRight() {
   } else if (type === "official") {
     image = "./assets/icons/referee.png"
   } else if (type === "staff") {
-    image = "./assets/icons/trophy.png"
+    if (position === "Volunteer") {
+      image = "./assets/icons/volunteer.png"
+    } else {
+      image = "./assets/icons/trophy.png"
+    }
   } else if (type === "rare") {
     position = "rare"
     image = "./assets/icons/rare.png"
+  } else if (type === "media") {
+    image = "./assets/icons/media.png"
   }
 
   let $bottom = $('#bottom-right');
