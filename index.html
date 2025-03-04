@@ -45,27 +45,35 @@
 
         <div id="card-options"></div>
 
-        <div id="adjust-background">
-          <div>Adjust Background Image:</div>
-          <label for="left-right">Left & Right</label><input type="range" min="0" max="100" value="50" class="slider" id="left-right"><br>
-          <label for="top-down">Top & Bottom</label><input type="range" min="0" max="100" value="50" class="slider" id="top-down">
-          <label for="zoom">Zoom</label><input type="range" min="100" max="500" value="100" class="slider" id="zoom">
-        </div>
-
         <div id="errors"></div>
 
-        <div id="card-buttons">
-          <button id="refresh-image">Update Trading Card</button><br>
-          <button id="reset-btn">Reset</button><br>
-          <button id="download-btn">Download Trading Card</button>
-          <h3>After downloading, double-check the image.</h3>
-          <h3>Submit your trading card(s) here! (form tbd)</h3>
+        <div class="card-buttons">
+          <button id="refresh-image">Update Trading Card</button>
+          <button id="reset-btn">Reset Inputs</button><br>
         </div>
 
-        <div id="faq">
-          <div class="ques">Why Dropbox or Imgur?</div>
+        <div id="adjust-background">
+          <div>Adjust Background Image:</div>
+          <label class="adjust-left" for="left-right">Left</label><input type="range" min="0" max="100" value="50" class="slider" id="left-right"><label class="adjust-right" for="left-right">Right</label><br>
+          <label class="adjust-left" for="top-down">Top</label><input type="range" min="0" max="100" value="50" class="slider" id="top-down"><label class="adjust-right" for="top-down">Bottom</label><br>
+          <label class="adjust-left" for="zoom">Zoom In</label><input type="range" min="100" max="500" value="300" class="slider" id="zoom"><label class="adjust-right" for="zoom">Zoom Out</label>
+        </div>
+
+        <div class="card-buttons">
+          <button id="download-btn">Download Trading Card</button>
+          <h3 class="hint-red">After downloading, double-check the image.</h3>
+          <h3 class="hint-black">Submit your trading card(s) here! (form tbd)</h3>
+        </div>
+
+        <details id="faq">
+          <summary>Frequent Asked Questions</summary>
+          <div class="ques">Why Imgur?</div>
           <div class="ans">Your photo may not load correctly. And your downloaded trading card may appear all black.</div>
-          <div class="ans2">A more technical answer: Dropbox and Imgur typically allow cross origin resource sharing, which is required for this website.</div>
+          <div class="ans2">A more technical answer: Imgur typically allows cross origin resource sharing, which is required for this website.</div>
+
+          <div class="ques">How do I use Dropbox photos?</div>
+          <div class="ans">Pull up your photo on Dropbox, right click on the photo, and copy image address.</div>
+          <div class="ans2">A more technical answer: Dropbox blocks CORS but Dropbox's CDN does not.</div>
 
           <div class="ques">Why is the black border so thick?</div>
           <div class="ans">For printing purposes! The bleed zone ensures important text & images are not cropped. The finished card will be cut at the trim line.</div>
@@ -77,7 +85,7 @@
           <div class="ques">Something's not working!</div>
           <div class="ans">Please reach out to <br>tradingcards (at) usquadball (dot) org</div>
 
-        </div>
+        </details>
       </div>
 
       <div id="card-design">
