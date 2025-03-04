@@ -192,7 +192,11 @@ function bottomRight() {
   }
 
   if (type === "player" || type === "team-staff") {
-    image = "./assets/icons/quadball.png"
+    if (position === "Mascot") {
+      image = "./assets/icons/mascot.png"
+    } else {
+      image = "./assets/icons/quadball.png"
+    }
   } else if (type === "official") {
     image = "./assets/icons/referee.png"
   } else if (type === "staff") {

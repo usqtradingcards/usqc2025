@@ -71,13 +71,12 @@
 #team-logo {
     margin-right: 16px;
     height: 64px;
-    text-shadow: 7px 7px 6px #000;
 }
 
 #team-name {
     font-size: 40px;
     line-height: 36px;
-    text-shadow: 7px 7px 6px #000;
+    text-shadow: 3px 3px 6px #000;
 }
 
 /* Player Number and Name */
