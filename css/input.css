@@ -4,7 +4,8 @@
 }
 
 #card-type, #errors, #adjust-background, .card-buttons {
-    margin-bottom: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 #faq {
@@ -36,9 +37,9 @@
     font-size:12px;
 }
 
-.hint-black {
+#submit-card {
     color: black;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 #show-trim-line {
@@ -66,4 +67,13 @@
 
 .adjust-left {
     text-align: right;
+}
+
+summary {
+    font-size: 18px;
+}
+
+#faq {
+    border-top: 1px solid black;
+    padding-top: 10px;
 }

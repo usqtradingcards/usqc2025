@@ -1,6 +1,12 @@
 function clickRefreshImage() {
   $('#errors').empty();
 
+  const cardType = $('#input-type').val()
+  if (cardType === '' || !cardType) {
+    $('#errors').append($('<div>', { text: "!! card type required" }))
+    return
+  }
+
   topLeft()
   bottomRight()
   mainText()
