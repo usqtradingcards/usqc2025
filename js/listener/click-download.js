@@ -1,7 +1,8 @@
 function makeAndDownload() {
   const card = document.getElementById("card");
   html2canvas(card, {
-    useCORS: true
+    useCORS: true,
+    logging: true
   }).then(function(canvas) {
     const imageData = canvas.toDataURL('image/png');
     const link = document.createElement("a");
