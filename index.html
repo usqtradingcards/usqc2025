@@ -28,7 +28,7 @@
     <h1 class="lato">US Quadball Cup 2025</h1>
     <h2 class="lato">Trading Card Designer</h2>
     <h3 class="lato">Desktop Chrome recommended. Untested on mobile.</h3>
-    <h4 class="lato">Submit your trading card(s) <a href="https://forms.gle/WDEAYoBCL71XskQE9">here</a>! Cards due March 24 11:59pm PT!</h4>
+    <h4 class="lato">Submit your trading card(s) <a target="_blank" href="https://forms.gle/WDEAYoBCL71XskQE9">here</a>! Cards due March 24 11:59pm PT!</h4>
     <div id="container">
       <div id="inputs" class="lato">
 
@@ -56,15 +56,30 @@
 
         <div id="adjust-background">
           <div>Adjust Background Image:</div>
-          <label class="adjust-left" for="left-right">Left</label><input type="range" min="0" max="100" value="50" class="slider" id="left-right"><label class="adjust-right" for="left-right">Right</label><br>
-          <label class="adjust-left" for="top-down">Top</label><input type="range" min="0" max="100" value="50" class="slider" id="top-down"><label class="adjust-right" for="top-down">Bottom</label><br>
-          <label class="adjust-left" for="zoom">Zoom In</label><input type="range" min="202" max="500" value="300" class="slider" id="zoom"><label class="adjust-right" for="zoom">Zoom Out</label>
+          <label class="adjust-left" for="left-right">Left</label>
+          <input type="range" min="0" max="100" value="50" class="slider" id="left-right">
+          <label class="adjust-right" for="left-right">Right</label>
+          <input type="text" id="left-right-num" class="adjust-num" value="50">
+          <br>
+          <label class="adjust-left" for="top-down">Top</label>
+          <input type="range" min="0" max="100" value="50" class="slider" id="top-down">
+          <label class="adjust-right" for="top-down">Bottom</label>
+          <input type="text" id="top-bottom-num" class="adjust-num" value="50">
+          <br>
+          <label class="adjust-left" for="zoom">Zoom Out</label>
+          <input type="range" min="202" max="500" value="300" class="slider" id="zoom">
+          <label class="adjust-right" for="zoom">Zoom In</label>
+          <input type="text" id="zoom-num" class="adjust-num" value="300">
+          <br>
+          <label class="adjust-left" for="rotate">Rotate 90°</label>
+          <input type="checkbox" id="rotate">
+
         </div>
 
         <div class="card-buttons">
           <button id="download-btn">Download Trading Card</button>
           <h3 class="hint-red">After downloading, double-check the image.</h3>
-          <h3 id="submit-card">Submit your trading card(s) <a href="https://forms.gle/WDEAYoBCL71XskQE9">here</a>!</h3>
+          <h3 id="submit-card">Submit your trading card(s) <a target="_blank" href="https://forms.gle/WDEAYoBCL71XskQE9">here</a>!</h3>
         </div>
 
         <details id="faq" open>
@@ -74,11 +89,11 @@
           <div class="ans2">A more technical answer: Imgur typically allows cross-origin resource sharing, which is required for this website.</div>
 
           <div class="ques">How should I upload to Imgur?</div>
-          <div class="ans">Use this <a href="https://img.vdoerig.com/">Imgur uploader</a> and use the link provided after upload</div>
+          <div class="ans">Upload to Imgur <a target="_blank" href="https://imgur.com/upload">here</a>. After upload, right-click on the photo > copy image address.</div>
 
-          <div class="ques">How do I use Dropbox photos?</div>
-          <div class="ans">Pull up your photo on Dropbox, right-click on the photo, and copy image address.</div>
-          <div class="ans2">A more technical answer: Dropbox blocks CORS but Dropbox's CDN does not.</div>
+          <div class="ques">Why doesn't the photo appear?</div>
+          <div class="ans">If you used Dropbox or Imgur, right-click on the photo and copy image address.</div>
+          <div class="ans2">A more technical answer: Dropbox & Imgur blocks CORS but Dropbox and Imgur's CDN does not.</div>
 
           <div class="ques">Why is the black border so thick?</div>
           <div class="ans">For printing purposes! The bleed zone ensures important text & images are not cropped. The finished card will be cut at the trim line.</div>
@@ -86,6 +101,9 @@
 
           <div class="ques">Don't see your team?</div>
           <div class="ans">Please send your team's name and logo (in png) to <br>tradingcards (at) usquadball (dot) org</div>
+
+          <div class="ques">Can I use Canva instead?</div>
+          <div class="ans">Please reach out to <br>tradingcards (at) usquadball (dot) org</div>
 
           <div class="ques">Something's not working!</div>
           <div class="ans">Please reach out to <br>tradingcards (at) usquadball (dot) org</div>

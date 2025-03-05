@@ -53,20 +53,30 @@
 
 #adjust-background label {
     display: inline-grid;
-    width: 64px;
     height: 16px;
     font-size: 12px;
 }
 
-#adjust-background input {
+#adjust-background input[type="range"] {
     position: relative;
     top: 4px;
-    margin: 0 6px 0 6px;
+    margin: 0 4px 0 4px;
     padding: 0;
 }
 
 .adjust-left {
+    display: inline-grid;
+    width: 60px;
     text-align: right;
+}
+
+.adjust-right {
+    width: 48px;
+}
+
+.adjust-num {
+    width: 36px;
+    font-size: 12px;
 }
 
 summary {

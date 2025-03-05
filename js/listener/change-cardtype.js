@@ -122,9 +122,10 @@ function nameDiv() {
 function photoDiv() {
   let cardOption = $('#card-options');
   // image url & photographer
-  cardOption.append($('<label>', { for: "input-image-url", text: "Image Url: " }))
-  cardOption.append($('<input>', { type: "text", id: "input-image-url", required: true, placeholder: "Imgur recommended" }))
-  cardOption.append($('<div>', { class: "hint-red", text: "See FAQ for Dropbox." }))
+  cardOption.append($('<label>', { for: "input-image-url", text: "Image Address: " }))
+  cardOption.append($('<input>', { type: "text", id: "input-image-url", required: true, placeholder: "Use Imgur or Dropbox" }))
+  cardOption.append($('<div>', { class: "hint-red", text: "Don't copy the url." }))
+  cardOption.append($('<div>', { class: "hint-red", text: "Right click > Copy Image Address." }))
   cardOption.append($('<div>', { class: "hint-red", text: "Do not use: Facebook, Squarespace." }))
   cardOption.append($('<label>', { for: "input-photographer", text: "Photographer: " }))
   cardOption.append($('<input>', { type: "text", id: "input-photographer", required: true }))
