@@ -23,32 +23,62 @@ function image() {
     return
   }
   $("#card-image").css('background-image', `url(${imageUrl})`)
+  imageZoom()
+}
+
+function imageZoom() {
+  let backgroundImage = $('#card-image').css('background-image');
+  var imageUrl = backgroundImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
   // determine min size percent
   const image = new Image();
   image.src = imageUrl;
   image.onload = function() {
-    const width = image.width;
-    const height = image.height;
+    let width;
+    let height;
+
+    let rotate = $('#rotate').is(':checked')
+
+    if (rotate) {
+      width = image.height;
+      height = image.width;
+    } else {
+      width = image.width;
+      height = image.height;
+    }
     const aspect = width / height
-    const divWidth = 694;
-    const divHeight = 936;
+    let divWidth;
+    let divHeight;
+    if (rotate) {
+      divWidth = $('#card-image').height();
+      divHeight = $('#card-image').width();
+    } else {
+      divWidth = $('#card-image').width();
+      divHeight = $('#card-image').height();
+    }
     const divAspect = divWidth / divHeight;
 
     let $zoom = $('#zoom');
     let minWidthZoom;
     if (divAspect > aspect) {
       // cover width, height overflow
-      minWidthZoom = 100
+      if (rotate) {
+        minWidthZoom = 100 * (height/width) * (divWidth/divHeight);
+      } else {
+        minWidthZoom = 100
+      }
     } else {
       // cover height, width overflow
-      let widthScale = width / divWidth
-      let heightScale = height / divHeight
-      minWidthZoom = 100 * widthScale / heightScale;
+      if (rotate) {
+        minWidthZoom = 100;
+      } else {
+        minWidthZoom = 100 * (width/height) * (divHeight/divWidth);
+      }
     }
+    minWidthZoom = Math.ceil(minWidthZoom)
     $zoom.attr('min', minWidthZoom)
-    $zoom.attr('value', minWidthZoom)
+    $zoom.attr('value', minWidthZoom * 2.5)
     $zoom.attr('max', minWidthZoom * 5)
-    adjustBackground();
+    $('#card-image').css('background-size', `${minWidthZoom}%`)
   }
 }
 

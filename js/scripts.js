@@ -22,6 +22,18 @@ document.getElementById("top-down")
 document.getElementById("zoom")
   .addEventListener("change", adjustBackground);
 
+document.getElementById("rotate")
+  .addEventListener("change", adjustRotate);
+
+document.getElementById("left-right-num")
+  .addEventListener("input", adjustBackgroundNum);
+
+document.getElementById("top-bottom-num")
+  .addEventListener("input", adjustBackgroundNum);
+
+document.getElementById("zoom-num")
+  .addEventListener("input", adjustBackgroundNum);
+
 function sanitize(input) {
   return input.replace(/[<>'"]/g, '');  // Remove <, >, ', ", /
 }

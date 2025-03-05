@@ -3,7 +3,7 @@
 #border {
     position: absolute;
     z-index: 4;
-    bottom: 56px;
+    bottom: 73.5px;
 
     width: 694px;
     height: 24px;
@@ -25,7 +25,7 @@
 #bottom-left {
     position: absolute;
     align-items: center;
-    left: 6px;
+    left: 12px;
     height: 24px;
 }
 
@@ -41,7 +41,7 @@
 #bottom-right {
     position: absolute;
     align-items: center;
-    right: 6px;
+    right: 12px;
     height: 24px;
 
     text-align: right;
@@ -57,12 +57,11 @@
     display: flex;
     align-items: center;
     position: absolute;
-    top: 64px;
+    top: 73.5px;
     z-index:3;
 
-    width: 670px;
+    width: 678px;
     height: 64px;
-    margin-left: 12px;
 
     display: flex;
     vertical-align: center;
@@ -85,11 +84,11 @@
     z-index: 2;
     bottom: 0;
 
-    width: 634px;
+    width: 652px;
 
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-bottom: 124px;
+    padding-left: 86.5px;
+    padding-right: 86.5px;
+    padding-bottom: 133.5px;
 }
 
 #top-line {
@@ -99,7 +98,7 @@
 }
 
 #bottom-line {
-    font-size: 90px;
+    font-size: 96px;
     line-height: 78px;
     text-shadow: 9px 9px 6px #000;
 }

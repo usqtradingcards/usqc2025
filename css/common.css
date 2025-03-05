@@ -9,12 +9,21 @@
 	src: url('../assets/fonts/FugazOne-Regular.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'Raleway';
+	src: url('../assets/fonts/Raleway-BlackItalic.ttf') format('truetype');
+}
+
 .lato {
 	font-family: "Lato", sans-serif;
 }
 
 .fugaz-one {
 	font-family: "Fugaz One", sans-serif;
+}
+
+.raleway {
+	font-family: "Raleway", sans-serif;
 }
 
 /* FONT OPTIONS */
