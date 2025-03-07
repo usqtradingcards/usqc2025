@@ -211,9 +211,9 @@ const Teams = {
     "image": "./assets/team-logos/TwinCitiesLogo.png",
     "name": "Twin Cities QC"
   },
-  "bobcat-quadball": {
+  "texas-state": {
     "image": "./assets/team-logos/TXSTQuadballLogo.png",
-    "name": "Bobcat Quadball"
+    "name": "Texas State Quadball"
   },
   "ucla": {
     "image": "./assets/team-logos/UCLALogo.png",
