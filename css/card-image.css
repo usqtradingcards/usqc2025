@@ -19,7 +19,6 @@
 #card-image {
     position: absolute;
     z-index:1;
-    top: 105.5px;
     width: 700px;
     height: 910px;
 
@@ -34,8 +33,8 @@
     position: absolute;
     z-index:1;
 
-    width: 936px;
-    height: 694px;
+    width: 910px;
+    height: 700px;
 
     border-radius: 20px;
 
