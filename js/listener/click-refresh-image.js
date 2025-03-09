@@ -198,7 +198,7 @@ function bottomLeft() {
       $('<img>', {
         src: "./assets/icons/camera.png"
       })
-      .add('<span>', {
+      .add('<div>', {
         class: 'text',
         text: photog
       })
@@ -248,21 +248,19 @@ function bottomRight() {
     image = "./assets/icons/media.png"
   }
 
+  let positionNumber = position
+  if (number && number !== '') {
+    positionNumber += ` #${number}`
+  }
+
   let $bottom = $('#bottom-right');
   $bottom.empty()
   $bottom
     .append(
       $('<div>', {
         class: 'text',
-        text: position
+        text: `${positionNumber}`
       }))
-  if (number !== '') {
-    $bottom
-      .append($('<div>', {
-        class: 'text',
-        text: `#${number}`
-      }))
-  }
   $bottom
     .append(
       $('<img>', {
