@@ -3,21 +3,20 @@
 #border {
     position: absolute;
     z-index: 4;
-    bottom: 73.5px;
+    bottom: 71.5px;
 
     width: 694px;
-    height: 24px;
+    height: 26px;
 }
 
 #border .text {
-    display: inline;
-    position: relative;
+    display: inline-block;
     font-size: 20px;
+    height: 24px;
 
     line-height: 1;
-    padding: 0;
     margin: 0;
-    top: -2px;
+    padding: 0;
 }
 
 /* Border Text - Bottom Left */
@@ -25,15 +24,22 @@
 #bottom-left {
     position: absolute;
     align-items: center;
-    left: 12px;
+    padding-left: 12px;
     height: 24px;
 }
 
+#bottom-left .text {
+    position: absolute;
+    left: 41px;
+    width: 200px;
+}
+
 #bottom-left img {
+    position: absolute;
     height: 16px;
     margin-right: 6px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    top: 3px;
+    box-sizing: border-box;
 }
 
 /* Border Text - Bottom Right */
@@ -41,15 +47,27 @@
 #bottom-right {
     position: absolute;
     align-items: center;
-    right: 12px;
+    padding-right: 12px;
     height: 24px;
+    left: 458px;
 
     text-align: right;
 }
 
+#bottom-right .text {
+    position: absolute;
+    width: 200px;
+    /*left: 462px;*/
+}
+
 #bottom-right img {
+    position: absolute;
     height: 20px;
-    margin-left: 6px;
+    margin-left:6px;
+    top: 2px;
+    box-sizing: border-box;
+    /*right: 12px;*/
+    left: 200px;
 }
 
 /* Team Logo and Name */
