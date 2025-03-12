@@ -243,4 +243,8 @@ const Teams = {
     "image": "./assets/team-logos/WashupsLogo.png",
     "name": "The Washups"
   },
+  "ohio-gemini": {
+    "image": "./assets/team-logos/Ohio_Gemini_Logo.png",
+    "name": "Ohio Gemini"
+  }
 }
