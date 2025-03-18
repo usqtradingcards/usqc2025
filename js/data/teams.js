@@ -246,5 +246,9 @@ const Teams = {
   "ohio-gemini": {
     "image": "./assets/team-logos/Ohio_Gemini_Logo.png",
     "name": "Ohio Gemini"
+  },
+  "rutgers": {
+    "image": "./assets/team-logos/RutgersLogo.png",
+    "name": "Rutgers University Quadball"
   }
 }
