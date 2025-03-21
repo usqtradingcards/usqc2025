@@ -28,7 +28,7 @@ const Teams = {
     "name": "Creighton QC"
   },
   "boom-train": {
-    "image": "./assets/team-logos/BoomTrainLogo.png",
+    "image": "./assets/team-logos/BT_Logo-white.png",
     "name": "Boom Train"
   },
   "bosny": {
