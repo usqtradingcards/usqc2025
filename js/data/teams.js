@@ -250,5 +250,9 @@ const Teams = {
   "rutgers": {
     "image": "./assets/team-logos/RutgersLogo.png",
     "name": "Rutgers University Quadball"
+  },
+  "orlando": {
+    "image": "./assets/team-logos/orlandoqc.png",
+    "name": "Orlando Quadball Club"
   }
 }
