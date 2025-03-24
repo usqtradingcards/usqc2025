@@ -254,5 +254,9 @@ const Teams = {
   "orlando": {
     "image": "./assets/team-logos/orlandoqc.png",
     "name": "Orlando Quadball Club"
+  },
+  "brandeis": {
+    "image": "./assets/team-logos/Brandeis.png",
+    "name": "Brandeis Quadball"
   }
 }
