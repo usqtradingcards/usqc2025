@@ -258,5 +258,9 @@ const Teams = {
   "brandeis": {
     "image": "./assets/team-logos/Brandeis.png",
     "name": "Brandeis Quadball"
+  },
+  "uva": {
+    "image": "./assets/team-logos/UVA.png",
+    "name": "UVA Quadball"
   }
 }
